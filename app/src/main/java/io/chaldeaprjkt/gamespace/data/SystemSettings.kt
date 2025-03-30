@@ -59,14 +59,14 @@ class SystemSettings @Inject constructor(
         }
 
     var threeScreenshot
-        get() = Settings.System.getIntForUser(
-            resolver, Settings.System.THREE_FINGER_GESTURE, 0,
+        get() = LineageSettings.System.getIntForUser(
+            resolver, LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION, 0,
             UserHandle.USER_CURRENT
-        ) == 1
-        set(it) {
-            Settings.System.putIntForUser(
-                resolver, Settings.System.THREE_FINGER_GESTURE,
-                it.toInt(), UserHandle.USER_CURRENT
+        )
+        set(value) {
+            LineageSettings.System.putIntForUser(
+                resolver, LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
+                value, UserHandle.USER_CURRENT
             )
         }
 
